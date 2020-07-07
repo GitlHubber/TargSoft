@@ -1,0 +1,86 @@
+package test.task.targsoft.data.database
+
+import test.task.targsoft.model.BreedItem
+import test.task.targsoft.model.Weight
+
+fun BreedsEntity.toBreedItem() = BreedItem(
+    this.adaptability,
+    this.affectionLevel,
+    this.altNames,
+    this.cfaUrl,
+    this.childFriendly,
+    this.countryCode,
+    this.countryCodes,
+    this.description,
+    this.dogFriendly,
+    this.energyLevel,
+    this.experimental,
+    this.grooming,
+    this.hairless,
+    this.healthIssues,
+    this.hypoallergenic,
+    this.id,
+    this.indoor,
+    this.intelligence,
+    this.lap,
+    this.lifeSpan,
+    this.name,
+    this.natural,
+    this.origin,
+    this.rare,
+    this.rex,
+    this.sheddingLevel,
+    this.shortLegs,
+    this.socialNeeds,
+    this.strangerFriendly,
+    this.suppressedTail,
+    this.temperament,
+    this.vcahospitalsUrl,
+    this.vetstreetUrl,
+    this.vocalisation,
+    Weight(this.weight.imperial, this.weight.metric),
+    this.wikipediaUrl
+)
+
+fun List<BreedsEntity>.toBreedItemList() = this.map { it.toBreedItem() }
+
+fun BreedItem.toBreedsEntity() = BreedsEntity (
+    adaptability = this.adaptability,
+    affectionLevel = this.affectionLevel,
+    altNames = this.altNames,
+    cfaUrl = this.cfaUrl,
+    childFriendly = this.childFriendly,
+    countryCode = this.countryCode,
+    countryCodes = this.countryCodes,
+    description = this.description,
+    dogFriendly = this.dogFriendly,
+    energyLevel = this.energyLevel,
+    experimental = this.experimental,
+    grooming = this.grooming,
+    hairless = this.hairless,
+    healthIssues = this.healthIssues,
+    hypoallergenic = this.hypoallergenic,
+    id = this.id,
+    indoor = this.indoor,
+    intelligence = this.intelligence,
+    lap = this.lap,
+    lifeSpan = this.lifeSpan,
+    name = this.name,
+    natural = this.natural,
+    origin = this.origin,
+    rare = this.rare,
+    rex = this.rex,
+    sheddingLevel = this.sheddingLevel,
+    shortLegs = this.shortLegs,
+    socialNeeds = this.socialNeeds,
+    strangerFriendly = this.strangerFriendly,
+    suppressedTail = this.suppressedTail,
+    temperament = this.temperament,
+    vcahospitalsUrl = this.vcahospitalsUrl,
+    vetstreetUrl = this.vetstreetUrl,
+    vocalisation = this.vocalisation,
+    weight = this.weight,
+    wikipediaUrl = this.wikipediaUrl
+)
+
+fun List<BreedItem>.toBreedsEntityList() = this.map { it.toBreedsEntity() }
